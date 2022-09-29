@@ -38,8 +38,9 @@ var _ = BeforeSuite(func() {
 })
 
 // Scenario: Function fetch first matching element
-//    When first prop is equal to 1 and secondProp is equal to
-//    It should return one row
+//
+//	When first prop is equal to 1 and secondProp is equal to
+//	It should return one row
 var _ = Describe("The Example repository", func() {
 	Context("Function fetch first matching element", func() {
 		When("first prop is equal to 1 and secondProp is equal to 2", func() {
@@ -47,6 +48,8 @@ var _ = Describe("The Example repository", func() {
 				result := repo.GetEntity(1, 2)
 
 				Expect(result).ShouldNot(BeNil())
+				Expect(result.FistProp).Should(BeEquivalentTo(1))
+				Expect(result.SecondProp).Should(BeEquivalentTo(2))
 			})
 		})
 	})
